@@ -3,182 +3,382 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Método Charla</title>
+    <meta
+      name="description"
+      content="Método Charla: Un espacio donde la experiencia se encuentra con la innovación en tecnología y programación."
+    />
+    <title>Método Charla - Innovación en Tecnología y Programación</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
       body {
         font-family: "Inter", sans-serif;
       }
     </style>
   </head>
-  <body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8 max-w-3xl">
-      <header class="mb-8">
-        <img
-          src="https://placehold.co/1200x300/1a202c/ffffff?text=M%C3%A9todo+Charla+Banner"
-          alt="Método Charla Banner"
-          class="w-full rounded-lg shadow-md mb-4"
-        />
-        <div class="flex items-center">
+  <body>
+    <header class="bg-gradient-to-b from-[#62ab4c] via-white to-white relative">
+      <div class="container mx-auto px-0 md:px-4 pb-4 max-w-7xl">
+        <div class="overflow-hidden">
           <img
-            src="https://placehold.co/80x80/1a202c/ffffff?text=MC"
-            alt="Método Charla Logo"
-            class="w-20 h-20 rounded-full mr-4"
+            src="img/banner-top-metodo-charla.jpg"
+            alt="Método Charla Banner"
+            class="w-full h-28 md:h-72 object-cover rounded-b-lg"
           />
-          <div>
-            <h1 class="text-2xl font-bold">Método Charla</h1>
-            <p class="text-gray-600">
-              Un espacio donde la experiencia se encuentra con la innovación.
-            </p>
+          <div
+            class="p-4 flex flex-col md:flex-row items-start md:items-center"
+          >
+            <img
+              src="img/logo-metodocharla.jpg"
+              alt="Método Charla Logo"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mr-4 -mt-10 border-4 border-white"
+            />
+            <div class="mt-4 md:mt-0">
+              <h1 class="text-2xl font-bold">Método Charla</h1>
+              <p class="">
+                Un espacio donde la experiencia se encuentra con la innovación.
+              </p>
+            </div>
           </div>
         </div>
-      </header>
+        <div class="border-b border-gray-200">
+          <nav class="-mb-px flex gap-6" aria-label="Tabs">
+            <a
+              href="#info"
+              id="info-tab"
+              class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 flex items-center"
+            >
+              <i class="fas fa-info-circle w-5 h-5 mr-2"></i>
+              Información
+            </a>
 
-      <main>
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 class="text-xl font-semibold mb-4">Información</h2>
-          <p class="mb-4">
-            Un espacio donde la experiencia se encuentra con la innovación.
-            Jesús León y Gerswin Pineda, dos profesionales con una trayectoria
-            impresionante en el mundo de la tecnología, te invitan a dialogar
-            sobre las tendencias que están definiendo nuestra era digital.
-          </p>
-          <ul class="space-y-2">
-            <li class="flex items-center">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"
-                ></path>
-              </svg>
-              Podcast - Programación y Tecnología
-            </li>
-            <li class="flex items-center">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                ></path>
-                <path
-                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                ></path>
-              </svg>
-              <a
-                href="mailto:metodocharla@gmail.com"
-                class="text-blue-600 hover:underline"
-                >metodocharla@gmail.com</a
-              >
-            </li>
-          </ul>
-        </section>
+            <a
+              href="#destacados"
+              id="destacados-tab"
+              class="shrink-0 border-b-2 border-[#25f0a0] text-gray-700 px-1 pb-4 text-sm font-medium flex items-center"
+            >
+              <i class="fas fa-star w-5 h-5 mr-2"></i>
+              Destacados
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 class="text-xl font-semibold mb-4">Destacados</h2>
-          <div class="space-y-4">
-            <div class="border rounded-lg p-4">
-              <img
-                src="https://placehold.co/600x400/1a202c/ffffff?text=Episodio+11"
-                alt="Episodio 11"
-                class="w-full rounded-lg mb-2"
-              />
-              <h3 class="font-semibold">
-                #11 Gobiernos Inteligentes: El Rol de la IA en la Transformación
-                Pública
-              </h3>
-            </div>
-            <div class="border rounded-lg p-4">
-              <img
-                src="https://placehold.co/600x400/1a202c/ffffff?text=Episodio+10"
-                alt="Episodio 10"
-                class="w-full rounded-lg mb-2"
-              />
-              <h3 class="font-semibold">
-                #10 La importancia de alfabetizar en ciberseguridad desde la
-                educación primaria
-              </h3>
-            </div>
-            <div class="border rounded-lg p-4">
-              <img
-                src="https://placehold.co/600x400/1a202c/ffffff?text=Episodio+9"
-                alt="Episodio 9"
-                class="w-full rounded-lg mb-2"
-              />
-              <h3 class="font-semibold">
-                #9 Google, Microsoft y OpenAI están hablando de cómo los agentes
-                de IA revolucionarán el futuro.
-              </h3>
-            </div>
-          </div>
-        </section>
+    <main class="bg-gray-100">
+      <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="flex flex-col lg:flex-row lg:space-x-8">
+          <section
+            class="w-full lg:w-2/5 bg-white rounded-lg shadow-md p-6 mb-8"
+          >
+            <h2 class="text-xl font-semibold mb-4">Información</h2>
+            <p class="mb-4">
+              Un espacio donde la experiencia se encuentra con la innovación.
+              Jesús León y Gerswin Pineda, dos profesionales con una trayectoria
+              impresionante en el mundo de la tecnología, te invitan a dialogar
+              sobre las tendencias que están definiendo nuestra era digital.
+            </p>
 
-        <section class="bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-xl font-semibold mb-4">Enlaces</h2>
-          <ul class="space-y-2">
-            <li>
-              <a
-                href="https://www.youtube.com/@MetodoCharla"
-                class="text-blue-600 hover:underline"
-                >YouTube</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.twitch.tv/metodocharla"
-                class="text-blue-600 hover:underline"
-                >Twitch</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://kick.com/metodocharla"
-                class="text-blue-600 hover:underline"
-                >Kick</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://open.spotify.com/show/6ASeXFqs88O2OtbrHZuPZU"
-                class="text-blue-600 hover:underline"
-                >Spotify</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.tiktok.com/@metodocharla"
-                class="text-blue-600 hover:underline"
-                >TikTok</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/metodocharla"
-                class="text-blue-600 hover:underline"
-                >Facebook</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/metodocharla"
-                class="text-blue-600 hover:underline"
-                >Instagram</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/metodocharla"
-                class="text-blue-600 hover:underline"
-                >Twitter</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.threads.net/@metodocharla"
-                class="text-blue-600 hover:underline"
-                >Threads</a
-              >
-            </li>
-          </ul>
-        </section>
-      </main>
-    </div>
+            <ul id="info-enlaces" class="space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-podcast fa-lg w-8 mr-3 text-slate-400"></i>
+                Podcast - Programación y Tecnología
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="mailto:metodocharla@gmail.com"
+                  class="text-blue-600 hover:underline truncate"
+                  >metodocharla@gmail.com</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-youtube fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.youtube.com/@MetodoCharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.youtube.com/@MetodoCharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-twitch fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.twitch.tv/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.twitch.tv/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-gamepad fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://kick.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://kick.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-spotify fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-tiktok fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.tiktok.com/@metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.tiktok.com/@metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-facebook fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.facebook.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.facebook.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-instagram fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.instagram.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.instagram.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-twitter fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://x.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://x.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-hashtag fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.threads.net/@metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.threads.net/@metodocharla</a
+                >
+              </li>
+            </ul>
+          </section>
+
+          <section
+            id="info-content"
+            class="tab-content hidden w-full lg:w-3/5 bg-white rounded-lg shadow-md p-6 mb-8"
+          >
+            <h2 class="text-xl font-semibold mb-4">Categorías</h2>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-podcast fa-lg w-8 mr-3 text-slate-400"></i>
+                Podcast - Programación y Tecnología
+              </li>
+            </ul>
+
+            <h2 class="text-xl font-semibold my-4">Información de contacto</h2>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-envelope fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="mailto:metodocharla@gmail.com"
+                  class="text-blue-600 hover:underline truncate"
+                  >metodocharla@gmail.com</a
+                >
+              </li>
+            </ul>
+            <h2 class="text-xl font-semibold my-4">Redes sociales</h2>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="fab fa-youtube fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.youtube.com/@MetodoCharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.youtube.com/@MetodoCharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-twitch fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.twitch.tv/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.twitch.tv/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-gamepad fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://kick.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://kick.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-spotify fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-tiktok fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.tiktok.com/@metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.tiktok.com/@metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-facebook fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.facebook.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.facebook.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-instagram fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.instagram.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.instagram.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fab fa-twitter fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://x.com/metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://x.com/metodocharla</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fa fa-hashtag fa-lg w-8 mr-3 text-slate-400"></i>
+                <a
+                  href="https://www.threads.net/@metodocharla"
+                  class="text-blue-600 hover:underline truncate"
+                  >https://www.threads.net/@metodocharla</a
+                >
+              </li>
+            </ul>
+          </section>
+
+          <section
+            id="destacados-content"
+            class="tab-content w-full lg:w-3/5 bg-white rounded-lg shadow-md p-6 mb-8"
+          >
+            <h2 class="text-xl font-semibold mb-4">Destacados</h2>
+            <div id="youtube-videos" class="space-y-4">
+              <!-- YouTube videos will be dynamically inserted here -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll("nav a");
+        const activeClass = "border-[#25f0a0] text-gray-700";
+        const inactiveClass =
+          "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700";
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            tabs.forEach((t) => {
+              t.classList.remove(...activeClass.split(" "));
+              t.classList.add(...inactiveClass.split(" "));
+            });
+
+            this.classList.remove(...inactiveClass.split(" "));
+            this.classList.add(...activeClass.split(" "));
+
+            const targetId = this.getAttribute("href").substring(1);
+            document.querySelectorAll(".tab-content").forEach((content) => {
+              content.classList.add("hidden");
+            });
+            document
+              .getElementById(targetId + "-content")
+              .classList.remove("hidden");
+
+            document
+              .getElementById("info-enlaces")
+              .classList.toggle("hidden", targetId === "info");
+          });
+        });
+
+        // Fetch YouTube videos
+        const apiKey = "AIzaSyCqjCPGS6Mgc8HxNEvO3dvvhRhcBq5RGPY";
+        const channelId = "UCYHiHqmLb2_zUoioOQui4jw";
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&order=date&maxResults=3&type=video&videoDuration=long`;
+
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const videosContainer = document.getElementById("youtube-videos");
+            videosContainer.innerHTML = ""; // Clear existing content
+
+            data.items.forEach((item, index) => {
+              const video = document.createElement("div");
+              video.className =
+                index === 0
+                  ? "border rounded-lg p-4 w-full"
+                  : "border rounded-lg p-4";
+              video.innerHTML = `
+                <img src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.title}" class="w-full rounded-lg mb-2" />
+                <h3 class="font-semibold">${item.snippet.title}</h3>
+              `;
+              videosContainer.appendChild(video);
+            });
+
+            // If there are more than one video, wrap the rest in a grid
+            if (data.items.length > 1) {
+              const gridContainer = document.createElement("div");
+              gridContainer.className =
+                "grid grid-cols-1 md:grid-cols-2 gap-4 mt-4";
+              const videoElements = videosContainer.querySelectorAll("div");
+              for (let i = 1; i < videoElements.length; i++) {
+                gridContainer.appendChild(videoElements[i]);
+              }
+              videosContainer.appendChild(gridContainer);
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching YouTube data:", error);
+            const videosContainer = document.getElementById("youtube-videos");
+            videosContainer.innerHTML =
+              "<p>Lo sentimos, no se pudieron cargar los videos en este momento. Por favor, inténtelo de nuevo más tarde.</p>";
+          });
+      });
+    </script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KPMVVFCVCP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-KPMVVFCVCP");
+    </script>
   </body>
 </html>
