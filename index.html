@@ -8,6 +8,56 @@
       content="Método Charla: Un espacio donde la experiencia se encuentra con la innovación en tecnología y programación."
     />
     <title>Método Charla - Innovación en Tecnología y Programación</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.metodocharla.com/" />
+    <meta
+      property="og:title"
+      content="Método Charla - Innovación en Tecnología y Programación"
+    />
+    <meta
+      property="og:description"
+      content="Un espacio donde la experiencia se encuentra con la innovación. Jesús León y Gerswin Pineda te invitan a dialogar sobre las tendencias que están definiendo nuestra era digital."
+    />
+    <meta
+      property="og:image"
+      content="https://www.metodocharla.com/img/metodo-charla-og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.metodocharla.com/" />
+    <meta
+      property="twitter:title"
+      content="Método Charla - Innovación en Tecnología y Programación"
+    />
+    <meta
+      property="twitter:description"
+      content="Un espacio donde la experiencia se encuentra con la innovación. Jesús León y Gerswin Pineda te invitan a dialogar sobre las tendencias que están definiendo nuestra era digital."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.metodocharla.com/img/metodo-charla-og-image.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -23,24 +73,96 @@
       body {
         font-family: "Inter", sans-serif;
       }
+       @media (max-width: 640px) {
+        body {
+          font-size: 14px;
+        }
+      }
     </style>
+    <script>
+      function lazyLoad() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+          ) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+              }
+            });
+          });
+
+          lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        } else {
+          let active = false;
+
+          const lazyLoad = function () {
+            if (active === false) {
+              active = true;
+
+              setTimeout(function () {
+                lazyImages.forEach(function (lazyImage) {
+                  if (
+                    lazyImage.getBoundingClientRect().top <=
+                      window.innerHeight &&
+                    lazyImage.getBoundingClientRect().bottom >= 0 &&
+                    getComputedStyle(lazyImage).display !== "none"
+                  ) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+
+                    lazyImages = lazyImages.filter(function (image) {
+                      return image !== lazyImage;
+                    });
+
+                    if (lazyImages.length === 0) {
+                      document.removeEventListener("scroll", lazyLoad);
+                      window.removeEventListener("resize", lazyLoad);
+                      window.removeEventListener("orientationchange", lazyLoad);
+                    }
+                  }
+                });
+
+                active = false;
+              }, 200);
+            }
+          };
+
+          document.addEventListener("scroll", lazyLoad);
+          window.addEventListener("resize", lazyLoad);
+          window.addEventListener("orientationchange", lazyLoad);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", lazyLoad);
+    </script>
   </head>
   <body>
     <header class="bg-gradient-to-b from-[#62ab4c] via-white to-white relative">
       <div class="container mx-auto px-0 md:px-4 pb-4 max-w-7xl">
         <div class="overflow-hidden">
           <img
-            src="img/banner-top-metodo-charla.jpg"
+            class="lazy w-full h-28 md:h-72 object-cover rounded-b-lg"
+            data-src="img/banner-top-metodo-charla.jpg"
             alt="Método Charla Banner"
-            class="w-full h-28 md:h-72 object-cover rounded-b-lg"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           />
           <div
             class="p-4 flex flex-col md:flex-row items-start md:items-center"
           >
             <img
-              src="img/logo-metodocharla.jpg"
+              class="lazy w-28 h-28 md:w-32 md:h-32 rounded-full mr-4 -mt-10 border-4 border-white"
+              data-src="img/logo-metodocharla.jpg"
               alt="Método Charla Logo"
-              class="w-28 h-28 md:w-32 md:h-32 rounded-full mr-4 -mt-10 border-4 border-white"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             />
             <div class="mt-4 md:mt-0">
               <h1 class="text-2xl font-bold">Método Charla</h1>
@@ -88,6 +210,13 @@
               sobre las tendencias que están definiendo nuestra era digital.
             </p>
 
+            <p id="info-detalle" class="hidden">
+              Cada episodio es una oportunidad para aprender de invitados
+              expertos y descubrir cómo la tecnología transforma nuestras vidas.
+              Únete a la conversación y amplía tus horizontes con “Método
+              Charla”.
+            </p>
+
             <ul id="info-enlaces" class="space-y-2">
               <li class="flex items-center">
                 <i class="fas fa-podcast fa-lg w-8 mr-3 text-slate-400"></i>
@@ -97,7 +226,7 @@
                 <i class="fas fa-envelope fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="mailto:metodocharla@gmail.com"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >metodocharla@gmail.com</a
                 >
               </li>
@@ -105,7 +234,7 @@
                 <i class="fab fa-youtube fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.youtube.com/@MetodoCharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.youtube.com/@MetodoCharla</a
                 >
               </li>
@@ -113,7 +242,7 @@
                 <i class="fab fa-twitch fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.twitch.tv/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.twitch.tv/metodocharla</a
                 >
               </li>
@@ -121,7 +250,7 @@
                 <i class="fas fa-gamepad fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://kick.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://kick.com/metodocharla</a
                 >
               </li>
@@ -129,7 +258,7 @@
                 <i class="fab fa-spotify fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU</a
                 >
               </li>
@@ -137,7 +266,7 @@
                 <i class="fab fa-tiktok fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.tiktok.com/@metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.tiktok.com/@metodocharla</a
                 >
               </li>
@@ -145,7 +274,7 @@
                 <i class="fab fa-facebook fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.facebook.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.facebook.com/metodocharla</a
                 >
               </li>
@@ -153,7 +282,7 @@
                 <i class="fab fa-instagram fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.instagram.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.instagram.com/metodocharla</a
                 >
               </li>
@@ -161,7 +290,7 @@
                 <i class="fab fa-twitter fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://x.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://x.com/metodocharla</a
                 >
               </li>
@@ -169,7 +298,7 @@
                 <i class="fa fa-hashtag fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.threads.net/@metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.threads.net/@metodocharla</a
                 >
               </li>
@@ -194,7 +323,7 @@
                 <i class="fas fa-envelope fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="mailto:metodocharla@gmail.com"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >metodocharla@gmail.com</a
                 >
               </li>
@@ -205,7 +334,7 @@
                 <i class="fab fa-youtube fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.youtube.com/@MetodoCharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.youtube.com/@MetodoCharla</a
                 >
               </li>
@@ -213,7 +342,7 @@
                 <i class="fab fa-twitch fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.twitch.tv/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.twitch.tv/metodocharla</a
                 >
               </li>
@@ -221,7 +350,7 @@
                 <i class="fas fa-gamepad fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://kick.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://kick.com/metodocharla</a
                 >
               </li>
@@ -229,7 +358,7 @@
                 <i class="fab fa-spotify fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://open.spotify.com/show/6ASeXFqsB8O2OtbrhZuPZU</a
                 >
               </li>
@@ -237,7 +366,7 @@
                 <i class="fab fa-tiktok fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.tiktok.com/@metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.tiktok.com/@metodocharla</a
                 >
               </li>
@@ -245,7 +374,7 @@
                 <i class="fab fa-facebook fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.facebook.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.facebook.com/metodocharla</a
                 >
               </li>
@@ -253,7 +382,7 @@
                 <i class="fab fa-instagram fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.instagram.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.instagram.com/metodocharla</a
                 >
               </li>
@@ -261,7 +390,7 @@
                 <i class="fab fa-twitter fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://x.com/metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://x.com/metodocharla</a
                 >
               </li>
@@ -269,7 +398,7 @@
                 <i class="fa fa-hashtag fa-lg w-8 mr-3 text-slate-400"></i>
                 <a
                   href="https://www.threads.net/@metodocharla"
-                  class="text-blue-600 hover:underline truncate"
+                  class="text-[#0097b2] hover:underline truncate"
                   >https://www.threads.net/@metodocharla</a
                 >
               </li>
@@ -319,6 +448,9 @@
             document
               .getElementById("info-enlaces")
               .classList.toggle("hidden", targetId === "info");
+            document
+              .getElementById("info-detalle")
+              .classList.toggle("hidden", targetId !== "info");
           });
         });
 
@@ -339,9 +471,16 @@
                 index === 0
                   ? "border rounded-lg p-4 w-full"
                   : "border rounded-lg p-4";
+              let heightImg = index === 0 ? "h-[360px]" : "h-[160px]";
+              const videoUrl = `https://www.youtube.com/watch?v=${item.id.videoId}`;
               video.innerHTML = `
-                <img src="${item.snippet.thumbnails.high.url}" alt="${item.snippet.title}" class="w-full rounded-lg mb-2" />
-                <h3 class="font-semibold">${item.snippet.title}</h3>
+                <a href="${videoUrl}" target="_blank" rel="noopener noreferrer" class="block">
+                  <img class="lazy w-full ${heightImg} object-cover rounded-lg mb-2" 
+                       data-src="${item.snippet.thumbnails.high.url}" 
+                       alt="${item.snippet.title}"
+                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                  <h3 class="font-semibold text-[#0097b2] hover:underline">${item.snippet.title}</h3>
+                </a>
               `;
               videosContainer.appendChild(video);
             });
@@ -357,6 +496,7 @@
               }
               videosContainer.appendChild(gridContainer);
             }
+            lazyLoad();
           })
           .catch((error) => {
             console.error("Error fetching YouTube data:", error);
