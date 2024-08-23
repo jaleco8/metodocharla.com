@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidad - Método Charla</title>
+    <meta
+      name="description"
+      content="Método Charla: Un espacio donde la experiencia se encuentra con la innovación en tecnología y programación."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      @media (max-width: 640px) {
+        body {
+          font-size: 14px;
+        }
+      }
+    </style>
+    <script>
+      function lazyLoad() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+        if ("IntersectionObserver" in window) {
+          let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+          ) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+              }
+            });
+          });
+
+          lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        } else {
+          let active = false;
+
+          const lazyLoad = function () {
+            if (active === false) {
+              active = true;
+
+              setTimeout(function () {
+                lazyImages.forEach(function (lazyImage) {
+                  if (
+                    lazyImage.getBoundingClientRect().top <=
+                      window.innerHeight &&
+                    lazyImage.getBoundingClientRect().bottom >= 0 &&
+                    getComputedStyle(lazyImage).display !== "none"
+                  ) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+
+                    lazyImages = lazyImages.filter(function (image) {
+                      return image !== lazyImage;
+                    });
+
+                    if (lazyImages.length === 0) {
+                      document.removeEventListener("scroll", lazyLoad);
+                      window.removeEventListener("resize", lazyLoad);
+                      window.removeEventListener("orientationchange", lazyLoad);
+                    }
+                  }
+                });
+
+                active = false;
+              }, 200);
+            }
+          };
+
+          document.addEventListener("scroll", lazyLoad);
+          window.addEventListener("resize", lazyLoad);
+          window.addEventListener("orientationchange", lazyLoad);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", lazyLoad);
+    </script>
+  </head>
+  <body>
+    <header class="bg-gradient-to-b from-[#62ab4c] via-white to-white relative">
+      <div class="container mx-auto px-2 sm:px-4 pb-4 max-w-7xl">
+        <div class="overflow-hidden">
+          <img
+            class="lazy w-full h-24 sm:h-28 md:h-72 object-cover rounded-b-lg"
+            data-src="img/banner-top-metodo-charla.jpg"
+            alt="Método Charla Banner"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          />
+          <div
+            class="p-2 sm:p-4 flex flex-col md:flex-row items-start md:items-center"
+          >
+            <div class="mt-2 md:mt-0">
+              <h1 class="text-xl sm:text-2xl font-bold">
+                Política de Privacidad de Método Charla
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-gray-100">
+      <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-7xl">
+        <div class="flex flex-col">
+          <section
+            class="tab-content w-full bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-8"
+          >
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">
+              1. Recopilación de Información
+            </h2>
+            <p class="text-gray-600">
+              Recopilamos información personal, específicamente tu nombre y
+              correo electrónico, de manera segura a través de la plataforma de
+              LinkedIn. Esta información es esencial para que podamos ofrecerte
+              un servicio personalizado y responder a tus consultas de manera
+              efectiva.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              2. Uso de la Información
+            </h2>
+            <p class="text-gray-600 mb-2">
+              La información que recopilamos se utiliza para:
+            </p>
+            <ul class="list-disc list-inside text-gray-600 ml-4">
+              <li>Responder a tus consultas.</li>
+              <li>
+                Enviarte información relevante relacionada con nuestro podcast.
+              </li>
+              <li>Explorar y llegar a posibles acuerdos comerciales.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              3. Compartición de Información
+            </h2>
+            <p class="text-gray-600">
+              Tu información personal se comparte únicamente con el equipo
+              interno de Método Charla. No compartimos tus datos con terceros
+              bajo ninguna circunstancia.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              4. Seguridad de los Datos
+            </h2>
+            <p class="text-gray-600">
+              Nos tomamos muy en serio la seguridad de tus datos personales.
+              Utilizamos aplicaciones que cuentan con cifrado de datos para
+              proteger la información que manejamos. El acceso a tus datos está
+              estrictamente limitado a los miembros del equipo de Método Charla
+              que lo necesiten para cumplir con sus responsabilidades. No
+              almacenamos tus datos en ninguna plataforma insegura. Además,
+              nuestro equipo está formado por profesionales capacitados y
+              conscientes de la importancia de manejar los datos de manera
+              segura y confidencial.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              5. Derechos de los Usuarios
+            </h2>
+            <p class="text-gray-600">
+              Como usuario, tienes derecho a solicitar la corrección o
+              eliminación de tu información personal. Sin embargo, estas
+              solicitudes estarán sujetas a las posibilidades técnicas y
+              normativas de la plataforma de LinkedIn, que es desde donde
+              obtenemos y gestionamos tus datos.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              6. Tiempo de Retención
+            </h2>
+            <p class="text-gray-600">
+              Conservaremos tu información personal durante el tiempo que tú lo
+              decidas. En el momento en que desees que eliminemos tus datos,
+              procederemos a hacerlo siempre y cuando LinkedIn lo permita.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              7. Actualizaciones de la Política
+            </h2>
+            <p class="text-gray-600">
+              Actualizaremos regularmente esta política de privacidad para
+              reflejar cambios en nuestras prácticas de manejo de datos, nuevas
+              leyes aplicables, o cambios en los servicios que ofrecemos.
+              Cualquier modificación será notificada a través de nuestros
+              canales de comunicación y estará disponible en nuestra página web.
+            </p>
+
+            <h2 class="text-2xl font-semibold text-gray-700 my-4">
+              8. Contacto para Consultas
+            </h2>
+            <p class="text-gray-600">
+              Si tienes alguna pregunta sobre esta política de privacidad o
+              sobre cómo manejamos tus datos, no dudes en ponerte en contacto
+              con nosotros a través de nuestros canales oficiales como
+              @metodocharla o visitando nuestra página web en
+              <a
+                href="http://www.metodocharla.com"
+                class="text-[#0097b2] hover:underline"
+                >www.metodocharla.com</a
+              >.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center text-gray-500 text-sm mt-8">
+      <p>&copy; 2024 Método Charla. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
